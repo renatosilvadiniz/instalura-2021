@@ -27,19 +27,19 @@ MenuWrapper.CentralSide = styled.div`
   justify-content: space-between;
   flex-grow: 1;
   margin-top: 17px;
-  border-top: 1px solid #88989e;
-  border-bottom: 1px solid #88989e;
+  border-top: 1px solid ${({ theme }) => theme.colors.tertiary.light.color};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.tertiary.light.color};
   padding: 12px;
   a {
     text-align: center;
     display: block;
     text-decoration: none;
-    color: #88989e;
-    transition: 200ms ease-in-out;
+    transition: all ${({ theme }) => theme.transition};
+    color: ${({ theme }) => theme.colors.tertiary.light.color};
     &:hover,
     &:focus {
       font-weight: 500;
-      color: #070c0e;
+      color: ${({ theme }) => theme.colors.tertiary.main.color};
     }
   }
 `;

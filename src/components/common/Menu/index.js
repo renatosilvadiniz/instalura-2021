@@ -1,5 +1,6 @@
 import MenuWrapper from "./styles";
-import Logo from "../Logo";
+import Logo from "../../../theme/Logo";
+import Button from "../Button";
 
 export default function Menu() {
   const links = [
@@ -32,8 +33,10 @@ export default function Menu() {
         })}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
-        <button>Entrar</button>
-        <button>Cadastrar</button>
+        <Button ghost variant="secondary.main">
+          Entrar
+        </Button>
+        <Button variant="primary.main">Cadastrar</Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
   );
