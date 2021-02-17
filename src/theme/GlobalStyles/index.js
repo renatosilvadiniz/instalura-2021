@@ -24,6 +24,10 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
+  /* default cursor */
+  a, button {
+    cursor: pointer;
+  }
 `;
 
 export default GlobalStyles;

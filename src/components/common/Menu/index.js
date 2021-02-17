@@ -1,6 +1,7 @@
 import MenuWrapper from "./styles";
 import Logo from "../../../theme/Logo";
 import Button from "../Button";
+import Text from "../../foundation/Text";
 
 export default function Menu() {
   const links = [
@@ -26,17 +27,28 @@ export default function Menu() {
       <MenuWrapper.CentralSide>
         {links.map((link, index) => {
           return (
-            <a key={index} href={link.url}>
+            <Text
+              tag="a"
+              variant="smallestException"
+              key={index}
+              href={link.url}
+            >
               {link.name}
-            </a>
+            </Text>
           );
         })}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
         <Button ghost variant="secondary.main">
-          Entrar
+          <Text tag="a" variant="paragraph1">
+            Entrar
+          </Text>
         </Button>
-        <Button variant="primary.main">Cadastrar</Button>
+        <Button variant="primary.main">
+          <Text tag="a" variant="paragraph1">
+            Cadastrar
+          </Text>
+        </Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
   );
