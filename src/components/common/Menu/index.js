@@ -1,4 +1,4 @@
-import MenuWrapper from "./styles";
+import { MenuWrapper } from "./styles";
 import Logo from "../../../theme/Logo";
 import Button from "../Button";
 import Text from "../../foundation/Text";
@@ -40,15 +40,9 @@ export default function Menu() {
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
         <Button ghost variant="secondary.main">
-          <Text tag="a" variant="paragraph1">
-            Entrar
-          </Text>
+          Entrar
         </Button>
-        <Button variant="primary.main">
-          <Text tag="a" variant="paragraph1">
-            Cadastrar
-          </Text>
-        </Button>
+        <Button variant="primary.main">Cadastrar</Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
   );

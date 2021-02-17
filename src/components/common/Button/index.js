@@ -1,5 +1,8 @@
 import styled, { css } from "styled-components";
+import { typographyVariantsMap } from "../../foundation/Text/variants";
 import get from "lodash/get";
+
+import breakpointsMedia from "../../../theme/Utils/breakpointsMedia";
 
 const ButtonGhost = css`
   background-color: transparent;
@@ -26,6 +29,10 @@ const Button = styled.button`
   &:focus {
     opacity: 0.5;
   }
+  ${breakpointsMedia({
+    xs: typographyVariantsMap.smallestException,
+    md: typographyVariantsMap.paragraph1,
+  })}
 `;
 
 export default Button;
