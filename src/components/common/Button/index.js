@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { typographyVariantsMap } from "../../foundation/Text/variants";
 import get from "lodash/get";
-
+import propToStyle from "../../../theme/Utils/propToStyle";
 import breakpointsMedia from "../../../theme/Utils/breakpointsMedia";
 
 const ButtonGhost = css`
@@ -33,6 +33,8 @@ const Button = styled.button`
     xs: typographyVariantsMap.smallestException,
     md: typographyVariantsMap.paragraph1,
   })}
+  ${propToStyle("display")}
+  ${propToStyle("margin")}
 `;
 
 export default Button;

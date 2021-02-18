@@ -1,14 +1,16 @@
 import styled from "styled-components";
 import { typographyVariantsMap } from "./variants";
+import propToStyle from "../../../theme/Utils/propToStyle";
 import PropTypes from "prop-types";
 
 const TextWrapper = styled.span`
   ${({ variant }) => typographyVariantsMap[variant]}
+  ${propToStyle("textAlign")}
 `;
 
-export default function Text({ tag, variant, children }) {
+export default function Text({ tag, variant, children, ...props }) {
   return (
-    <TextWrapper as={tag} variant={variant}>
+    <TextWrapper as={tag} variant={variant} {...props}>
       {children}
     </TextWrapper>
   );
