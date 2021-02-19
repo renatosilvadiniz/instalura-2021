@@ -1,7 +1,8 @@
-import styled, { css } from "styled-components";
-import breakpointsMedia from "../../../../theme/Utils/breakpointsMedia";
-import { typographyVariantsMap } from "../../../foundation/Text/variants";
+import styled, { css } from 'styled-components';
+import breakpointsMedia from '../../../../theme/Utils/breakpointsMedia';
+import { typographyVariantsMap } from '../../../foundation/Text/variants';
 
+// eslint-disable-next-line import/prefer-default-export
 export const MenuWrapper = styled.nav`
   font-family: "Rubik", sans-serif;
   display: flex;
@@ -81,13 +82,13 @@ MenuWrapper.CentralSide = styled.div`
     color: #88989e;
     transition: 200ms ease-in-out;
     ${breakpointsMedia({
-      xs: css`
+    xs: css`
         ${typographyVariantsMap.smallestException}
       `,
-      md: css`
+    md: css`
         ${typographyVariantsMap.paragraph1}
       `,
-    })}
+  })}
     &:hover,
     &:focus {
       font-weight: 500;

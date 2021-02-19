@@ -1,6 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import normalizeCss from "normalize.css";
-// import theme from "../src/theme";
+import { createGlobalStyle } from 'styled-components';
+import normalizeCss from 'normalize.css';
 
 const GlobalStyles = createGlobalStyle`
   * {

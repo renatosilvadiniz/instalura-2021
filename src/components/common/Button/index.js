@@ -1,8 +1,8 @@
-import styled, { css } from "styled-components";
-import { typographyVariantsMap } from "../../foundation/Text/variants";
-import get from "lodash/get";
-import propToStyle from "../../../theme/Utils/propToStyle";
-import breakpointsMedia from "../../../theme/Utils/breakpointsMedia";
+import styled, { css } from 'styled-components';
+import get from 'lodash/get';
+import { typographyVariantsMap } from '../../foundation/Text/variants';
+import propToStyle from '../../../theme/Utils/propToStyle';
+import breakpointsMedia from '../../../theme/Utils/breakpointsMedia';
 
 const ButtonGhost = css`
   background-color: transparent;
@@ -10,10 +10,8 @@ const ButtonGhost = css`
 `;
 
 const ButtonDefault = css`
-  background-color: ${({ theme, variant }) =>
-    get(theme.colors, `${variant}.color`)};
-  color: ${({ theme, variant }) =>
-    get(theme.colors, `${variant}.contrastText`)};
+  background-color: ${({ theme, variant }) => get(theme.colors, `${variant}.color`)};
+  color: ${({ theme, variant }) => get(theme.colors, `${variant}.contrastText`)};
 `;
 
 const Button = styled.button`
@@ -33,8 +31,8 @@ const Button = styled.button`
     xs: typographyVariantsMap.smallestException,
     md: typographyVariantsMap.paragraph1,
   })}
-  ${propToStyle("display")}
-  ${propToStyle("margin")}
+  ${propToStyle('display')}
+  ${propToStyle('margin')}
 `;
 
 export default Button;

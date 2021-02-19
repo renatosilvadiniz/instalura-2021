@@ -1,6 +1,7 @@
-import styled, { css } from "styled-components";
-import breakpointsMedia from "../../../../theme/Utils/breakpointsMedia";
-import PropTypes from "prop-types";
+import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
+import breakpointsMedia from '../../../../theme/Utils/breakpointsMedia';
+import propToStyle from '../../../../theme/Utils/propToStyle';
 
 const Container = styled.div`
   width: 100%;
@@ -11,7 +12,6 @@ const Container = styled.div`
   ${breakpointsMedia({
     xs: css`
       max-width: initial;
-
       padding-right: 28px;
       padding-left: 28px;
     `,
@@ -30,6 +30,7 @@ const Container = styled.div`
       max-width: 1222px;
     `,
   })}
+  ${propToStyle('marginTop')}
 `;
 
 const Row = styled.div`
@@ -50,37 +51,39 @@ const Col = styled.div`
       flex: 0 0 ${(100 * value[size]) / 12}%;
       max-width: ${(100 * value[size]) / 12}%;
     `;
-
-    return typeof value === "number"
+    return typeof value === 'number'
       ? css`
           flex: 0 0 ${(100 * value) / 12}%;
           max-width: ${(100 * value) / 12}%;
         `
       : breakpointsMedia({
-          xs: value && helper("xs"),
-          sm: value && helper("sm"),
-          md: value && helper("md"),
-          lg: value && helper("lg"),
-          xl: value && helper("xl"),
-        });
+        xs: value && helper('xs'),
+        sm: value && helper('sm'),
+        md: value && helper('md'),
+        lg: value && helper('lg'),
+        xl: value && helper('xl'),
+      });
   }}
   ${({ offset }) => {
     const helper = (size) => css`
       margin-left: ${(100 * offset[size]) / 12}%;
     `;
-
-    return typeof offset === "number"
+    return typeof offset === 'number'
       ? css`
           margin-left: ${(100 * offset) / 12}%;
         `
       : breakpointsMedia({
-          xs: offset && helper("xs"),
-          sm: offset && helper("sm"),
-          md: offset && helper("md"),
-          lg: offset && helper("lg"),
-          xl: offset && helper("xl"),
-        });
+        xs: offset && helper('xs'),
+        sm: offset && helper('sm'),
+        md: offset && helper('md'),
+        lg: offset && helper('lg'),
+        xl: offset && helper('xl'),
+      });
   }}
+  ${propToStyle('display')}
+  ${propToStyle('alignItems')}
+  ${propToStyle('justifyContent')}
+  ${propToStyle('flexDirection')}
 `;
 
 Col.defaultProps = {
@@ -99,6 +102,7 @@ Col.propTypes = {
   ]),
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export const Grid = {
   Container,
   Row,
