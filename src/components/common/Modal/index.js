@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import Box from '../../foundation/layout/Box';
+import { motion } from 'framer-motion';
 
 const Modal = ({ isOpen, onClose, children }) => {
 
@@ -9,7 +9,7 @@ const Modal = ({ isOpen, onClose, children }) => {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.3);
     position: fixed;
     top: 0;
     left: 0;
@@ -17,6 +17,7 @@ const Modal = ({ isOpen, onClose, children }) => {
     bottom: 0;
     margin: auto;
     overflow: scroll;
+    transition: all .3s;
     ${({ isOpen }) => isOpen ?
             css`
         opacity: 1;
@@ -34,7 +35,24 @@ const Modal = ({ isOpen, onClose, children }) => {
             const isSafeArea = event.target.closest('[data-modal-safe-area="true"]');
             if (!isSafeArea) onClose()
         }}>
-            {children({ 'data-modal-safe-area': 'true' })}
+            <motion.div
+                variants={{
+                    open: {
+                        transform: "translateX(0%)",
+                    },
+                    closed: {
+                        transform: "translateX(-100%)",
+                    },
+                }}
+                animate={isOpen ? 'open' : 'closed'}
+                style={{
+                    display: 'flex',
+                    flex: 1,
+                    transition: '.5s'
+                }}
+            >
+                {children({ 'data-modal-safe-area': 'true' })}
+            </motion.div>
         </ModalWrapper>
     )
 }
